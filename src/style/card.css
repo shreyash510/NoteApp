@@ -1,0 +1,55 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.cardbody{
+    position: relative;
+    width: 25em;
+    height: auto;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+.notebtn{
+   position: absolute;
+   border-radius: 50%;
+
+}
+.container input{
+    border: none;
+}
+
+.cardShow{
+    position: relative;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+    margin: 2em;
+    padding: 1.5em;
+    width: 15em;
+     
+}
+.show p{word-wrap: break-word;}
+
+.notebtn{display: flex;
+    position: absolute;
+    right: 14px;
+    }
+
+.show .delBtn{
+    position: absolute;
+    cursor: pointer;
+    padding: 2px;
+    right: 10px;
+}
+
+.notes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
