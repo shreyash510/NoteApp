@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import CardShow from "./CardShow";
 // import CardShow from './CardShow';
 
-const NoteApp = (props) => {
+const NoteApp = () => {
     const [txt,setTxt]=useState({});
+    const [btn, setBtn]=useState([]);
     // const [btn, setBtn]=useState([])
     const inputevent = (e) => {
         setTxt((preV)=>{
@@ -13,13 +15,22 @@ const NoteApp = (props) => {
         })
     }
     const btnClick = () => {
-        props.passNote(txt);
-        // console.log(txt)
+        setBtn((oldV)=>{
+            return[
+                ...oldV,txt
+            ];
+        });
         setTxt({
             title:'',
             desc:''
-        })
-
+        });
+    };
+    const delCard=(id)=>{
+        setBtn((oldV)=>{
+            return oldV.filter((arrEle, index)=>{
+                return index !== id;
+            });
+        });
     }
     return (
         <>
@@ -29,12 +40,24 @@ const NoteApp = (props) => {
                         <input value={txt.title} name="title" onChange={inputevent} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Title" />
                     </div>
                     <div className="mb-3">
-                        <textarea value={txt.desc} name="desc" onChange={inputevent} className="form-control" id="exampleFormControlTextarea1" placeholder="Enter Description here....." rows="3"></textarea>
+                        <textarea value={txt.desc} name="desc" onChange={inputevent} className="form-control" id="exampleFormControlTextarea1" placeholder="Enter Note here....." rows="3"></textarea>
                         <button onClick={btnClick} className="notebtn btn btn-primary">+</button>
                     </div>
                 </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {
+                    btn.map((val, index)=>{
+                        return<CardShow
+                                key={index}
+                                id={index}
+                                title={val.title}
+                                desc={val.desc}
+                                onSelect={delCard}
+                />
+                    })
+                }
+                
                 
             </div>
         </>

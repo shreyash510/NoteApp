@@ -34,6 +34,7 @@
     width: 15em;
      
 }
+.show h4{word-wrap: break-word;}
 .show p{word-wrap: break-word;}
 
 .notebtn{display: flex;
@@ -44,12 +45,22 @@
 .show .delBtn{
     position: absolute;
     cursor: pointer;
-    padding: 2px;
+    padding: 10px;
     right: 10px;
+    color: black;
+    background-color: rgb(164, 201, 255);
+    border-radius: 50%;
+    bottom: 0;
 }
 
 .notes{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+@media (max-width: 434px) {
+    .cardShow{
+        width: 100%;
+    }
 }
