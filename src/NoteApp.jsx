@@ -34,8 +34,9 @@ const NoteApp = () => {
     }
     return (
         <>
+        <center><h3>Shreyash Kolhe keep app</h3></center>
             <div className="container rounded my-4">
-                <div className="cardbody shadow p-3 mb-5 rounded w-20">
+                <div className="cardbody w-20">
                     <div className="mb-3">
                         <input value={txt.title} name="title" onChange={inputevent} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Title" />
                     </div>
@@ -45,7 +46,7 @@ const NoteApp = () => {
                     </div>
                 </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap',marginTop: '-30px' }}>
                 {
                     btn.map((val, index)=>{
                         return<CardShow

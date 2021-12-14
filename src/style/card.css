@@ -13,6 +13,12 @@
     background: #e0e0e0;
     box-shadow:  20px 20px 60px #bebebe,
              -20px -20px 60px #ffffff;
+    padding: 7px;
+    border-radius: 12px;
+}
+.cardbody input{
+    border-radius: 20px;
+    padding: 10px;
 }
 .notebtn{
    position: absolute;
@@ -62,5 +68,8 @@
 @media (max-width: 434px) {
     .cardShow{
         width: 100%;
+    }
+    .cardShow{
+        margin-bottom: -12px;
     }
 }
